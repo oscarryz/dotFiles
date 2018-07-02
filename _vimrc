@@ -25,7 +25,7 @@ set expandtab
 set showmatch
 "This setting will cause the cursor to very briefly jump to a brace/parenthese/bracket's "match" whenever you type a closing or opening brace/parenthese/bracket. I've had almost no mismatched-punctuation errors since I started using this setting.
 
-"set guioptions-=T
+set guioptions-=T
 "I find the toolbar in the GUI version of vim (gvim) to be somewhat useless visual clutter. This option gets rid of the toolbar.
 
 "set vb t_vb=
@@ -46,6 +46,12 @@ set incsearch
 " Opens gvim using the entire screen
 " autocmd GuiEnter * simalt ~x
 
+" Enable Ctrl-C, Ctrl-V, select with cursor etc. as in mswin
+source $VIMRUNTIME/mswin.vim
+behave mswin
+autocmd BufNewFile,BufRead *.honey set syntax=java
+nnoremap <C-f> <PageDown>
+nnoremap <C-b> <PageUp>
 
 " Favorite Color Scheme
 if has("gui_running")
@@ -57,14 +63,14 @@ if has("gui_running")
    set guioptions-=T
    "Terminus is AWESOME
    "set guifont=Lucida_Console:h12
+   " Unbind Ctrl F for find
+   macmenu Edit.Find.Find\.\.\. key=<nop>
+   
 else
    "set guifont=Lucida_Console:h12
    "colorscheme metacosm
 endif
 
-" Enable Ctrl-C, Ctrl-V, select with cursor etc. as in mswin
-source $VIMRUNTIME/mswin.vim
-behave mswin
 
 
 " set rtp+=$GOROOT/misc/vim
