@@ -17,7 +17,7 @@ set autoindent
 set smartindent
 "The first setting tells vim to use "autoindent" (that is, use the current line's indent level to set the indent level of new lines). The second makes vim attempt to intelligently guess the indent level of any new line based on the previous line, assuming the source file is in a C-like language. Combined, they are very useful in writing well-formatted source code.
 
-set tabstop=4
+set tabstop=2
 set shiftwidth=4
 set expandtab
 "I prefer 4-space tabs to 8-space tabs. The first setting sets up 4-space tabs, and the second tells vi to use 4 spaces when text is indented (auto or with the manual indent adjustmenters.)
@@ -56,8 +56,9 @@ nnoremap <C-b> <PageUp>
 " Favorite Color Scheme
 if has("gui_running")
    " colorscheme torte
-   colorscheme molokai
-   set guifont=Menlo_Regular:h12
+   " colorscheme molokai
+   colorscheme dracula "https://github.com/dracula/vim
+   set guifont=Menlo_Regular:h14
    let g:molokai_original = 1
    " Remove Toolbar
    set guioptions-=T
